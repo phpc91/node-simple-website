@@ -2,12 +2,11 @@
   "name": "simple-website",
   "version": "1.0.0",
   "description": "a simple website for learning nodejs web development",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "stylus source/stylesheets/index.styl -o static/css",
-    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
-    "clean": "rm -rf static\\css && mkdir -p static\\css",
+    "build-css": "mkdir static\\css && stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "mkdir static\\css && stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rmdir /s/q static\\css",
     "build": "npm run clean && npm run build-css",
     "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
     "start": "node server"
